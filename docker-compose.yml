@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  redis:
+    image: bitnami/redis:6.2
+    env_file: .env
+    ports:
+      - 6379:6379
+    environment:
+      TZ: America/Sao-Paulo
+      REDIS_PASSWORD: $REDIS_PASSW
+    volumes:
+      - redis_data:/bitnami/redis/data
+    networks:
+      - api
+volumes:
+  redis_data:
+
+networks:
+  api:
+    driver: "bridge"
