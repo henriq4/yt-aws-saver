@@ -1,10 +1,10 @@
 const awsCredentials = {
   credentials: {
-    accessKeyId: "",
-    secretAccessKey: "",
+    accessKeyId: "example",
+    secretAccessKey: "example",
   },
-  region: "",
-  bucket: "",
+  region: "example",
+  bucket: "example",
 };
 
 export { awsCredentials };
