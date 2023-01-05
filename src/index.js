@@ -28,6 +28,8 @@ async function test() {
         Key: `${info.videoDetails.title.split(" ").join("_")}.mkv`,
         Body: download,
       },
+      queueSize: 4,
+      partSize: 1024 * 1024 * 5,
     });
 
     parallelUploads3.on("httpUploadProgress", progress => {
