@@ -3,12 +3,16 @@ import { Upload } from "@aws-sdk/lib-storage";
 import { S3Client } from "@aws-sdk/client-s3";
 import ytdl from "ytdl-core";
 
+import { awsCredentials } from "./config/aws";
+
 const passThrough = new PassThrough();
 
-const url = "https://www.youtube.com/watch?v=1J6Ks4GE9cg";
+const url = "https://www.youtube.com/watch?v=Yl-hlwhj2B0";
 
-async function test() {
-  let info = await ytdl.getInfo(url);
+const app = async () => {
+  const info = await ytdl.getInfo(url);
+
+  console.log("Informação carregada...");
 
   const download = ytdl(url, {
     quality: "highest",
@@ -17,14 +21,11 @@ async function test() {
   try {
     const parallelUploads3 = new Upload({
       client: new S3Client({
-        region: process.env.AWS_DEFAULT_REGION,
-        credentials: {
-          accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-          secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        },
+        region: awsCredentials.region,
+        credentials: awsCredentials.credentials,
       }),
       params: {
-        Bucket: process.env.AWS_BUCKET_NAME,
+        Bucket: awsCredentials.bucket,
         Key: `${info.videoDetails.title.split(" ").join("_")}.mkv`,
         Body: download,
       },
@@ -32,14 +33,12 @@ async function test() {
       partSize: 1024 * 1024 * 5,
     });
 
-    parallelUploads3.on("httpUploadProgress", progress => {
-      console.log(progress);
-    });
-
     await parallelUploads3.done();
+
+    console.log("Download finalizado.");
   } catch (e) {
     console.log(e);
   }
-}
+};
 
-test();
+export { app };
