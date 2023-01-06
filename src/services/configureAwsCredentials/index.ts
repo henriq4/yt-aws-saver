@@ -14,7 +14,11 @@ const configureAwsCredentials = async () => {
 
       const isExampleText = data.match(/(example)/g) ? true : false;
 
-      if (!isExampleText) return;
+      if (!isExampleText) {
+        console.log("Credenciais aws configuradas...");
+
+        return resolve();
+      }
 
       getAwsCredentials()
         .then(({ accessKeyId, secretAccessKey, region, bucket }) =>
