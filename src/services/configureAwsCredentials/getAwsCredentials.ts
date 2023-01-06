@@ -9,9 +9,7 @@ const getAwsCredentials = async () => {
   });
 
   // alert message
-  console.log(
-    "*************************************\nParece que suas credenciais AWS não estão configuradas\n*************************************\n",
-  );
+  console.log("\nAws credentials are not seet, starting configuration...\n");
 
   const accessKeyId = await rl.question("Aws access key id: ");
   const secretAccessKey = await rl.question("Aws secret for access key: ");
@@ -20,7 +18,7 @@ const getAwsCredentials = async () => {
 
   rl.close();
 
-  console.log("Credenciais salvas");
+  console.log("Saved aws credencials...\n");
 
   return {
     accessKeyId,

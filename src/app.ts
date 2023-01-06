@@ -5,7 +5,7 @@ const app = async () => {
   const url = process.argv[2];
 
   if (!url) {
-    console.log("Url não fornecida, finalizando programa..");
+    console.log("Url not provided, exiting program...");
 
     return 1;
   }

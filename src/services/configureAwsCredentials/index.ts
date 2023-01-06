@@ -15,7 +15,7 @@ const configureAwsCredentials = async () => {
       const isExampleText = data.match(/(example)/g) ? true : false;
 
       if (!isExampleText) {
-        console.log("Credenciais aws configuradas...");
+        console.log("Configured aws credentials...\n");
 
         return resolve();
       }

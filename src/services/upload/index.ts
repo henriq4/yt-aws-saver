@@ -6,14 +6,14 @@ import { awsCredentials } from "../../config/aws";
 import { client } from "../../providers/awsS3";
 
 const upload = async (url: string) => {
-  console.log("Carregando informações...");
+  console.log("Loading video information...");
 
   const passThrough = new PassThrough();
 
   const info = await ytdl.getInfo(url);
 
-  console.log("Informações carregadas...");
-  console.log("Começando o download...");
+  console.log("Informations uploaded\n...");
+  console.log("Download started...");
 
   const download = ytdl
     .downloadFromInfo(info, {
@@ -34,7 +34,7 @@ const upload = async (url: string) => {
 
   await parallelUploads3.done();
 
-  console.log("Upload finalizado finalizado.");
+  console.log("Upload finished\n.");
 };
 
 export { upload };
