@@ -5,15 +5,15 @@ import ytdl from "ytdl-core";
 import { awsCredentials } from "../../config/aws";
 import { client } from "../../providers/awsS3";
 
-const upload = async () => {
-  console.log("Começando o download...");
+const upload = async (url: string) => {
+  console.log("Carregando informações...");
 
-  const url = "https://www.youtube.com/watch?v=1aKZMt9Vs_E";
   const passThrough = new PassThrough();
 
   const info = await ytdl.getInfo(url);
 
-  console.log("Informação carregada...");
+  console.log("Informações carregadas...");
+  console.log("Começando o download...");
 
   const download = ytdl
     .downloadFromInfo(info, {
@@ -34,7 +34,7 @@ const upload = async () => {
 
   await parallelUploads3.done();
 
-  console.log("Download finalizado.");
+  console.log("Upload finalizado finalizado.");
 };
 
 export { upload };
