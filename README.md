@@ -2,7 +2,7 @@
 
 <br>
 
-# Motivation
+## Motivation
 
 This project was created as a **study case** to understand more about **streams**, **threads**, **queues**, **workers**, **concurrency** and **parallelism** in Node.js.
 
@@ -10,36 +10,9 @@ Key words: Study Case · Streams · Threads · Queues · Workers · Concurrency 
 
 <br>
 
-# Technologies
+## How to use
 
-<a href="https://www.typescriptlang.org/" target="_blank">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-alt="Typescript" width="40" height="40"/>
-</a>
-<a href="https://nodejs.org/" target="_blank">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-alt="NodeJS" width="40" height="40"/>
-</a>
-<a href="https://redis.io/" target="_blank">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
-alt="Redis" width="40" height="40"/>
-</a>
-</a>
-<a href="https://www.docker.com/" target="_blank">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-alt="Docker" width="40" height="40"/>
-</a>
-</a>
-<a href="https://aws.amazon.com/pt/" target="_blank">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
-alt="Aws" width="40" height="40"/>
-</a>
-
-<br>
-
-# How to use
-
-## Requerimentos
+### Requerimentos
 
 - [docker](https://docs.docker.com/get-docker/) >= 20.10.0
 - [docker-compose](https://docs.docker.com/compose/install/) >= 1.29
@@ -48,21 +21,21 @@ alt="Aws" width="40" height="40"/>
 
 <br>
 
-## Inside the code
+### Inside the code
 
-### 1. Clone the repository (suggest to use ssh)
+1. Clone the repository (suggest to use ssh)
 
 ```bash
 git clone https://github.com/henriq4/yt-aws-saver.git
 ```
 
-### 2. Install the project dependencies
+2. Install the project dependencies
 
 ```bash
 pnpm i
 ```
 
-### 3. Configure aws credentials (optional)
+3. Configure aws credentials (optional)
 
 ```ts
 /* src/config/aws/index.ts */
@@ -87,7 +60,7 @@ pnpm dev <video url>
 
 <br>
 
-# Roadmap
+## Roadmap
 
 - [x] Download video
 - [x] Typescrip typing
@@ -102,7 +75,7 @@ pnpm dev <video url>
 
 <br>
 
-# Author
+## Author
 
 | [<img src="https://github.com/henriq4.png?size=130" width=130><br><sub>@henriq4</sub>](https://github.com/henriq4) |
 | :----------------------------------------------------------------------------------------------------------------: |
