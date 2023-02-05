@@ -1,14 +1,14 @@
-# ![gif](./assets/example.gif "Gif example")
+# Youtube AWS saver
 
-<br>
+## Demo
+
+https://user-images.githubusercontent.com/62851165/216831110-cb3a9d7b-506e-4605-b37e-fea70a72c9c7.mp4
 
 ## Motivation
 
 This project was created as a **study case** to understand more about **streams**, **threads**, **queues**, **workers**, **concurrency** and **parallelism** in Node.js.
 
 Key words: Study Case · Streams · Threads · Queues · Workers · Concurrency · Parallelism · Node.js · BullMQ · Typescript · Aws S3 · Docker · Redis
-
-<br>
 
 ## How to use
 
@@ -18,8 +18,6 @@ Key words: Study Case · Streams · Threads · Queues · Workers · Concurrency 
 - [docker-compose](https://docs.docker.com/compose/install/) >= 1.29
 - [node](https://nodejs.org/en/download/) >= 18.12.x
 - [pnpm](https://pnpm.io/installation) >= 7.x
-
-<br>
 
 ### Inside the code
 
@@ -58,8 +56,6 @@ export { awsCredentials };
 pnpm dev <video url>
 ```
 
-<br>
-
 ## Roadmap
 
 - [x] Download video
@@ -72,8 +68,7 @@ pnpm dev <video url>
 - [x] Script to change aws credencials with is example configuration
 - [ ] Apply queues and workers to receive more than one video (currently working...)
 - [ ] Generate binary bundle with cli application
-
-<br>
+- [ ] Creating unitary tests
 
 ## Author
 
